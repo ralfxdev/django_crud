@@ -46,6 +46,10 @@ http://127.0.0.1:8000/admin/
 
 http://127.0.0.1:8000/api/helloworld/
 
+http://127.0.0.1:8000/api/botellas/
+
+http://127.0.0.1:8000/api/cervezas/
+
 Método POST => ```{"name":"nombre"}```
 
 
