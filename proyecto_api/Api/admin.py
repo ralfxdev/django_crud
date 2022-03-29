@@ -9,4 +9,4 @@ admin.site.register(models.Cerveza)
 
 admin.site.register(models.Botella)
 
-# admin.site.register(models.Person)
+admin.site.register(models.Contact)

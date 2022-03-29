@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+from phonenumber_field.modelfields import PhoneNumberField
 
 class UserProfileManager(BaseUserManager):
     def create_user(self, email, name, password=None):
@@ -56,19 +57,6 @@ class Cerveza(models.Model):
         return self.marca
 
 
-# class Person(models.Model):
-#     SHIRT_SIZES = (
-#         ('S', 'Small'),
-#         ('M', 'Medium'),
-#         ('L', 'Large'),
-#     )
-#     name = models.CharField(max_length=60)
-#     shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
-
-#     def __str__(self):
-#         return self.name
-    
-
 class Botella(models.Model):
     marca = models.CharField(max_length=50)
     material = models.CharField(max_length=50)
@@ -78,3 +66,16 @@ class Botella(models.Model):
 
     def __str__(self):
         return self.marca
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    phone = PhoneNumberField(blank=True)
+    birthday = models.DateField()
+    social_profile = models.CharField(max_length=255)
+
+   
+
+    def __str__(self):
+        return self.name

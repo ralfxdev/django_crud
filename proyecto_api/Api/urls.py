@@ -6,7 +6,8 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'cervezas', views.CervezaViewSet)
 router.register(r'botellas', views.BotellaViewSet)
-# router.register(r'person', views.PersonViewSet)
+router.register(r'contacts', views.ContactViewSet)
+
 urlpatterns = router.urls
 
 

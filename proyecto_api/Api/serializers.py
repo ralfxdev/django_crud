@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from Api.models import Cerveza, Botella
+from Api.models import Cerveza, Botella, Contact
 
 class HelloSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=10)
@@ -18,6 +18,7 @@ class BotellaSerializer(serializers.ModelSerializer):
         model = Botella
         fields = '__all__'
 
-# class PersonSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Person
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
